@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_login/flutter_login.dart';
 import 'package:flutter_login/src/dart_helper.dart';
+import 'package:flutter_login/src/models/SignupData.dart';
 import 'package:flutter_login/src/paddings.dart';
 import 'package:flutter_login/src/providers/auth.dart';
 import 'package:flutter_login/src/widget_helper.dart';
@@ -171,14 +172,16 @@ class LoginCardState extends State<LoginCard> with TickerProviderStateMixin {
 
     if (auth.isLogin) {
       error = await auth.onLogin(LoginData(
-        name: auth.email,
+        email: auth.email,
         password: auth.password,
       ));
     } else {
-      error = await auth.onSignup(LoginData(
-        name: auth.email,
-        password: auth.password,
-      ));
+      error = await auth.onSignup(SignupData(
+          email: auth.email,
+          password: auth.password,
+          firstName: auth.firstName,
+          lastName: auth.lastName,
+          dob: auth.dob));
     }
 
     // workaround to run after _cardSizeAnimation in parent finished

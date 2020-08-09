@@ -20,6 +20,7 @@ import 'src/widgets/fade_in.dart';
 import 'src/widgets/hero_text.dart';
 import 'src/widgets/gradient_box.dart';
 export 'src/models/login_data.dart';
+export 'src/models/SignupData.dart';
 export 'src/providers/login_messages.dart';
 export 'src/providers/login_theme.dart';
 import 'src/constants.dart';
@@ -229,7 +230,7 @@ class FlutterLogin extends StatefulWidget {
   }) : super(key: key);
 
   /// Called when the user hit the submit button when in sign up mode
-  final AuthCallback onSignup;
+  final SignupCallback onSignup;
 
   /// Called when the user hit the submit button when in login mode
   final AuthCallback onLogin;
