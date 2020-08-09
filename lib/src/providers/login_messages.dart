@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
 
 class LoginMessages with ChangeNotifier {
-  LoginMessages({
-    this.usernameHint: defaultUsernameHint,
-    this.passwordHint: defaultPasswordHint,
-    this.confirmPasswordHint: defaultConfirmPasswordHint,
-    this.forgotPasswordButton: defaultForgotPasswordButton,
-    this.loginButton: defaultLoginButton,
-    this.signupButton: defaultSignupButton,
-    this.recoverPasswordButton: defaultRecoverPasswordButton,
-    this.recoverPasswordIntro: defaultRecoverPasswordIntro,
-    this.recoverPasswordDescription: defaultRecoverPasswordDescription,
-    this.goBackButton: defaultGoBackButton,
-    this.confirmPasswordError: defaultConfirmPasswordError,
-    this.recoverPasswordSuccess: defaultRecoverPasswordSuccess,
-  });
+  LoginMessages(
+      {this.usernameHint: defaultUsernameHint,
+      this.passwordHint: defaultPasswordHint,
+      this.confirmPasswordHint: defaultConfirmPasswordHint,
+      this.forgotPasswordButton: defaultForgotPasswordButton,
+      this.loginButton: defaultLoginButton,
+      this.signupButton: defaultSignupButton,
+      this.recoverPasswordButton: defaultRecoverPasswordButton,
+      this.recoverPasswordIntro: defaultRecoverPasswordIntro,
+      this.recoverPasswordDescription: defaultRecoverPasswordDescription,
+      this.goBackButton: defaultGoBackButton,
+      this.confirmPasswordError: defaultConfirmPasswordError,
+      this.recoverPasswordSuccess: defaultRecoverPasswordSuccess,
+      this.firstNamePlaceholder: defaultFirstNamePlaceholder,
+      this.lastNamePlaceholder: defaultLastNamePlaceholder,
+      this.dateOfBirthPlaceholder: defaultDobPlaceholder});
 
   static const defaultUsernameHint = 'Email';
   static const defaultPasswordHint = 'Password';
@@ -29,6 +31,9 @@ class LoginMessages with ChangeNotifier {
   static const defaultGoBackButton = 'BACK';
   static const defaultConfirmPasswordError = 'Password do not match!';
   static const defaultRecoverPasswordSuccess = 'An email has been sent';
+  static const defaultFirstNamePlaceholder = "First Name";
+  static const defaultLastNamePlaceholder = "Last Name";
+  static const defaultDobPlaceholder = "Date Of Birth";
 
   /// Hint text of the user name [TextField]
   final String usernameHint;
@@ -67,4 +72,10 @@ class LoginMessages with ChangeNotifier {
 
   /// The success message to show after submitting recover password
   final String recoverPasswordSuccess;
+
+  final String firstNamePlaceholder;
+
+  final String lastNamePlaceholder;
+
+  final String dateOfBirthPlaceholder;
 }

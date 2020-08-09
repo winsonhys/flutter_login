@@ -58,6 +58,27 @@ class Auth with ChangeNotifier {
     notifyListeners();
   }
 
+  String _firstName = '';
+  get firstName => _firstName;
+  set firstName(String firstName) {
+    _firstName = firstName;
+    notifyListeners();
+  }
+
+  String _lastName = '';
+  get lastName => _lastName;
+  set lastName(String lastName) {
+    _lastName = firstName;
+    notifyListeners();
+  }
+
+  DateTime _dob;
+  get dob => _dob.toString();
+  set dob(DateTime dob) {
+    _dob = dob;
+    notifyListeners();
+  }
+
   String _password = '';
   get password => _password;
   set password(String password) {

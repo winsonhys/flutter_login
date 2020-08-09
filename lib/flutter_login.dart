@@ -148,7 +148,7 @@ class __HeaderState extends State<_Header> {
             height: logoHeight,
             fit: BoxFit.contain,
             alignment: Alignment.center,
-            width: (MediaQuery.of(context).size.width)*0.7,
+            width: (MediaQuery.of(context).size.width) * 0.7,
           )
         : NullWidget();
 
@@ -426,12 +426,6 @@ class _FlutterLoginState extends State<FlutterLogin>
           ),
           RaisedButton(
             materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            color: Colors.orange,
-            child: Text('PAGE', style: textStyle),
-            onPressed: () => authCardKey.currentState.runChangePageAnimation(),
-          ),
-          RaisedButton(
-            materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
             color: Colors.red,
             child: Text('NAV', style: textStyle),
             onPressed: () => authCardKey.currentState.runChangeRouteAnimation(),
@@ -566,7 +560,7 @@ class _FlutterLoginState extends State<FlutterLogin>
         widget.emailValidator ?? FlutterLogin.defaultEmailValidator;
     final passwordValidator =
         widget.passwordValidator ?? FlutterLogin.defaultPasswordValidator;
-    
+
     return MultiProvider(
       providers: [
         ChangeNotifierProvider.value(
@@ -601,19 +595,24 @@ class _FlutterLoginState extends State<FlutterLogin>
                     Positioned(
                       child: AuthCard(
                         key: authCardKey,
-                        padding: EdgeInsets.only(top: cardTopPosition + logoMarginTop),
+                        padding: EdgeInsets.only(
+                            top: cardTopPosition + logoMarginTop),
                         loadingController: _loadingController,
                         emailValidator: emailValidator,
                         passwordValidator: passwordValidator,
                         onSubmit: _reverseHeaderAnimation,
                         onSubmitCompleted: widget.onSubmitAnimationCompleted,
                         onPressedSignUp: widget.onPressedSignUp,
-                        hideButtonForgotPassword: widget.hideButtonForgotPassword,
+                        hideButtonForgotPassword:
+                            widget.hideButtonForgotPassword,
                         hideButtonSignUp: widget.hideButtonSignUp,
                       ),
                     ),
                     Positioned(
-                      top: cardTopPosition - headerHeight - logoMarginBottom + logoMarginTop,
+                      top: cardTopPosition -
+                          headerHeight -
+                          logoMarginBottom +
+                          logoMarginTop,
                       child: _buildHeader(headerHeight, loginTheme),
                     ),
                   ],
