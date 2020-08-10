@@ -75,7 +75,7 @@ class Auth with ChangeNotifier {
   }
 
   DateTime _dob;
-  get dob => _dob.toString();
+  get dob => _dob;
   set dob(DateTime dob) {
     _dob = dob;
     notifyListeners();
